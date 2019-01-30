@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Star Rating - Pure CSS</title>
+    <!-- We need to load font awesome to show our star icons. -->
+    <link rel="stylesheet"
+    href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <style>
+        /* Let's define an import rule at the top. @import allows you to import
+        a stylesheet into another */
+        @import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: roboto;
+        }
+
+        body {
+            background: #009968;
+        }
+        /* Select all class movie_item */
+        .movie_item {
+            width: 93%;
+            max-width: 350px;
+            text-align: center;
+            margin: 4% auto;
+            padding: 30px 0;
+            background: #111;
+            color: #EEE;
+            border-radius: 5px;
+            border: thin solid #444;
+            overflow: hidden; /* overflow controls what happens to content
+            larger than specified area */
+        }
+
+        /* Let's define title class' properties.It's contained in a div element */
+        div.title {
+            font-size: 2em;
+        }
+
+        /* Let's define stars class' properties.It's contained in a div element */
+        div.stars {
+            width: 270px;
+            display: inline-block;
+        }
+        /* Let's define star css class properties.It's contained in an input element */
+        input.star {
+            display: none;
+        }
+
+        label.star {
+            float: right;
+            padding: 10px;
+            font-size: 36px;
+            color: #444;
+            transition: all .2s; /* provide a way to control animation speed when
+            changing CSS properties*/
+        }
+
+        input.star:checked~label.star:before { /* checked is a property of radiobuttons
+        and checkboxes */
+            content: '\f005';
+            color: #FD4;
+            transition: all .25s;
+        }
+
+        input.star-5:checked~label.star:before {/*If you are wondering what ~ means it
+        means preceds. Left precedes right. */
+            color: #FE7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input.star-1:checked~label.star:before {
+            color: #F62;
+        }
+
+        label.star:hover {
+            transform: rotate(-15deg) scale(1.3);
+        }
+
+        label.star:before {
+            content: '\f006';
+            font-family: FontAwesome;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Let's now define two movie items -->
+    <div class="movie_item" style="margin-top:100px;">
+        <div class="title">
+            <h3>Star Wars - Attack of the Clones</h3>
+        </div>
+        <div class="stars">
+            <form action="">
+                <input class="star star-5" id="star-5" type="radio" name="star" />
+                <label class="star star-5" for="star-5"></label>
+                <input class="star star-4" id="star-4" type="radio" name="star" />
+                <label class="star star-4" for="star-4"></label>
+                <input class="star star-3" id="star-3" type="radio" name="star" />
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-2" id="star-2" type="radio" name="star" />
+                <label class="star star-2" for="star-2"></label>
+                <input class="star star-1" id="star-1" type="radio" name="star" />
+                <label class="star star-1" for="star-1"></label>
+            </form>
+        </div>
+        <p>Please rate the Movies for us</p>
+    </div>
+    <div class="movie_item">
+        <div class="title">
+            <h3>Stranger Things - Season 2</h3>
+        </div>
+        <div class="stars">
+            <form action="">
+                <input class="star star-5" id="s_things_5" type="radio" name="star" />
+                <label class="star star-5" for="s_things_5"></label>
+                <input class="star star-4" id="s_things_4" type="radio" name="star" />
+                <label class="star star-4" for="s_things_4"></label>
+                <input class="star star-3" id="s_things_3" type="radio" name="star" />
+                <label class="star star-3" for="s_things_3"></label>
+                <input class="star star-2" id="s_things_2" type="radio" name="star" />
+                <label class="star star-2" for="s_things_2"></label>
+                <input class="star star-1" id="s_things_1" type="radio" name="star" />
+                <label class="star star-1" for="s_things_1"></label>
+            </form>
+        </div>
+        <p>Select a Rating for this show</p>
+    </div>
+
+</body>
+
+</html>
+
